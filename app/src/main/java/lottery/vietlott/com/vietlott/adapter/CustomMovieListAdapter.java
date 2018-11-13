@@ -76,7 +76,7 @@ public class CustomMovieListAdapter extends BaseAdapter {
         title.setText(m.getTitle());
 
         // rating
-        rating.setText("Rating: " + String.valueOf(m.getRating()));
+        rating.setText("Ngày quay: " + String.valueOf(m.getRating()));
 
         // genre
         String genreStr = "";

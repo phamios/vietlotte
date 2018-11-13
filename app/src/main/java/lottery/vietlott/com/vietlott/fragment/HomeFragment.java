@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
     private static final String TAG = HomeFragment.class.getSimpleName();
 
     // Movies json url
-    private static final String url = "https://api.androidhive.info/json/movies.json";
+    private static final String url = "https://camcorners.com/luckybet/demo.json";
     private ProgressDialog pDialog;
     private List<Movie> movieList = new ArrayList<Movie>();
     private ListView listView;
@@ -87,8 +87,6 @@ public class HomeFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
-
         pDialog = new ProgressDialog(getActivity());
         // Showing progress dialog before making http request
         pDialog.setMessage("Loading...");
@@ -114,9 +112,8 @@ public class HomeFragment extends Fragment {
                                 Movie movie = new Movie();
                                 movie.setTitle(obj.getString("title"));
                                 movie.setThumbnailUrl(obj.getString("image"));
-                                movie.setRating(((Number) obj.get("rating"))
-                                        .doubleValue());
-                                movie.setYear(obj.getInt("releaseYear"));
+                                movie.setRating(obj.getString("rating"));
+                                movie.setYear(obj.getString("releaseYear"));
 
                                 // Genre is json array
                                 JSONArray genreArry = obj.getJSONArray("genre");
