@@ -6,6 +6,9 @@ package lottery.vietlott.com.vietlott.adapter;
 
 import lottery.vietlott.com.vietlott.R;
 import lottery.vietlott.com.vietlott.activity.AboutUsActivity;
+import lottery.vietlott.com.vietlott.activity.PowerActivity;
+import lottery.vietlott.com.vietlott.fragment.HomeFragment;
+import lottery.vietlott.com.vietlott.fragment.MoviesFragment;
 import lottery.vietlott.com.vietlott.ulti.AppController;
 import lottery.vietlott.com.vietlott.model.Movie;
 
@@ -13,6 +16,8 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -26,14 +31,14 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 
 
-public class CustomMovieListAdapter extends BaseAdapter {
+public class CustomHomeAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
     private List<Movie> movieItems;
     private Context mContext;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
-    public CustomMovieListAdapter(Context context, Activity activity, List<Movie> movieItems) {
+    public CustomHomeAdapter(Context context, Activity activity, List<Movie> movieItems) {
         this.activity = activity;
         this.mContext = context;
         this.movieItems = movieItems;
@@ -99,6 +104,13 @@ public class CustomMovieListAdapter extends BaseAdapter {
         View.OnClickListener yourClickListener = new View.OnClickListener() {
             public void onClick(View v) {
                 Toast.makeText(mContext,   "Hello" + position, Toast.LENGTH_SHORT).show();
+                activity.startActivity(new Intent(activity, PowerActivity.class));
+
+//                MoviesFragment fragment2 = new MoviesFragment();
+//                FragmentManager fragmentManager = ((Activity) mContext).getFragmentManager();
+//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.replace(R.id.frame,fragment2);
+//                fragmentTransaction.commit();
             }
         };
 

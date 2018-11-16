@@ -31,6 +31,9 @@
     <string name="action_logout">Logout</string>
     <string name="action_mark_all_read">Mark All as Read</string>
     <string name="privacy_policy">Privacy Policy</string>
+    <string name="sodutaikhoan">Số dư tài khoản:</string>
+    <string name="mua_bao">Mua bao</string>
+    <string name="ky_mua">Kỳ mua</string>
 
 
 </resources>

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import lottery.vietlott.com.vietlott.R;
 
-import lottery.vietlott.com.vietlott.adapter.CustomMovieListAdapter;
+import lottery.vietlott.com.vietlott.adapter.CustomHomeAdapter;
 import lottery.vietlott.com.vietlott.ulti.AppController;
 import lottery.vietlott.com.vietlott.model.Movie;
 
@@ -21,13 +21,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.widget.ListView;
 
 import com.android.volley.Response;
@@ -53,7 +48,7 @@ public class HomeFragment extends Fragment {
     private ProgressDialog pDialog;
     private List<Movie> movieList = new ArrayList<Movie>();
     private ListView listView;
-    private CustomMovieListAdapter adapter;
+    private CustomHomeAdapter adapter;
 
 
 
@@ -165,7 +160,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         listView = (ListView) view.findViewById(R.id.list);
-        adapter = new CustomMovieListAdapter(getContext(),getActivity(), movieList);
+        adapter = new CustomHomeAdapter(getContext(),getActivity(), movieList);
         listView.setAdapter(adapter);
 
         return view;
