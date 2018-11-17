@@ -17,8 +17,9 @@
             android:text="@string/sodutaikhoan" />
 
         <LinearLayout
+            android:id="@+id/textlinear"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
@@ -35,25 +36,38 @@
                 android:layout_weight="1"
                 android:text="@string/ky_mua" />
 
+
+
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearspinner"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="45dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <Spinner
                 android:id="@+id/spinner"
-                android:layout_width="100dp"
-                android:layout_height="25dp"
-
-                 />
+                android:layout_width="188dp"
+                android:layout_height="25dp" />
 
             <Spinner
                 android:id="@+id/spinner2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"  />
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
         </LinearLayout>
 
     </LinearLayout>
