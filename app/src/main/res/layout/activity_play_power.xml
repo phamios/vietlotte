@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -58,14 +61,142 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView4"
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/levelImage"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/circlebackground" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="A"
+                    android:textColor="#000"
+                    android:textSize="15sp"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/number1"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:maxLength="2"
+                    android:textSize="12sp"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:background="@drawable/circle_edittext"
+                    android:padding="20dp"
+                    />
+                <EditText
+                    android:id="@+id/number2"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:maxLength="2"
+                    android:maxLines="1"
+                    android:textSize="12sp"
+                    android:inputType="number"
+                    android:background="@drawable/circle_edittext"
+                    android:padding="20dp"
+                    />
+                <EditText
+                    android:id="@+id/number3"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:maxLength="2"
+                    android:textSize="12sp"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:background="@drawable/circle_edittext"
+                    android:padding="20dp"
+                    />
+
+                <EditText
+                    android:id="@+id/number4"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textColor="#fff"
+                    android:maxLength="2"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:background="@drawable/circle_edittext"
+                    android:padding="20dp"
+                    />
+
+                <EditText
+                    android:id="@+id/number5"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:maxLength="2"
+                    android:textSize="12sp"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:background="@drawable/circle_edittext"
+                    android:padding="20dp"
+                    />
+
+                <EditText
+                    android:id="@+id/number6"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:maxLength="2"
+                    android:maxLines="1"
+                    android:textSize="12sp"
+                    android:inputType="number"
+                    android:background="@drawable/circle_edittext"
+                    android:padding="20dp"
+                    />
+
+                <Button
+                    android:id="@+id/push_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/round_button"
+                    android:padding="20dp"
+                    android:text="Auto"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    tools:text="Auto" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>

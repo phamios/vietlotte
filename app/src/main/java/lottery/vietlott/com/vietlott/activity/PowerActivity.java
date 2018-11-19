@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import java.text.ParseException;
@@ -13,6 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 import lottery.vietlott.com.vietlott.R;
+import lottery.vietlott.com.vietlott.model.SpinnerDateModel;
 
 public class PowerActivity extends AppCompatActivity {
 
@@ -58,6 +61,16 @@ public class PowerActivity extends AppCompatActivity {
         SimpleDateFormat postFormater = new SimpleDateFormat("dd MMMM, yyyy");
         String newDateStr = postFormater.format(dateObj);
 
+        ArrayList<SpinnerDateModel> listDate = new ArrayList<>();
+
+        final String[] select_qualification = {newDateStr};
+        for (int i = 0; i < select_qualification.length; i++) {
+            SpinnerDateModel stateVO = new SpinnerDateModel();
+            stateVO.setTitle(select_qualification[i]);
+            stateVO.setSelected(false);
+            listDate.add(stateVO);
+        }
+
         // nạp dữ liệu cho spinner của ngày tháng vừa nhận.
         spinnerDate.add(newDateStr);
         ArrayAdapter<String> adapterDate = new ArrayAdapter<String>(
@@ -65,6 +78,8 @@ public class PowerActivity extends AppCompatActivity {
         adapterDate.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner sItemsDate = (Spinner) findViewById(R.id.spinner2);
         sItemsDate.setAdapter(adapterDate);
+
+
 
     }
 
