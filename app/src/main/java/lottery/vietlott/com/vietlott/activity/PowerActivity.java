@@ -59,7 +59,7 @@ public class PowerActivity extends AppCompatActivity {
         String newDateStr = postFormater.format(dateObj);
 
         // nạp dữ liệu cho spinner của ngày tháng vừa nhận.
-        spinnerArray.add(newDateStr);
+        spinnerDate.add(newDateStr);
         ArrayAdapter<String> adapterDate = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerDate);
         adapterDate.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
