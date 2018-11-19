@@ -3,9 +3,14 @@ package lottery.vietlott.com.vietlott.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import java.text.ParseException;
@@ -18,6 +23,8 @@ import lottery.vietlott.com.vietlott.R;
 import lottery.vietlott.com.vietlott.model.SpinnerDateModel;
 
 public class PowerActivity extends AppCompatActivity {
+
+    public int numberOfLines = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +52,24 @@ public class PowerActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner sItems = (Spinner) findViewById(R.id.spinner);
         sItems.setAdapter(adapter);
+
+        sItems.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                if(position == 7) {
+                    Add_Line();
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
+        });
+
+
 
         // Nhập dữ liệu cho mua theo kì liên tiếp
         List<String> spinnerDate =  new ArrayList<String>();
@@ -81,6 +106,19 @@ public class PowerActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    public void Add_Line() {
+        LinearLayout ll = (LinearLayout)findViewById(R.id.layoutbao);
+        // add edittext
+        EditText et = new EditText(this);
+        LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        et.setLayoutParams(p);
+        et.setText("00");
+        et.setId(numberOfLines + 1);
+        ll.addView(et);
+        numberOfLines++;
     }
 
     @Override
